@@ -1,6 +1,7 @@
 ![image](https://user-images.githubusercontent.com/35948339/120202766-f13f3600-c261-11eb-843e-44967f184eed.png)
-  - register-with-eureka는 eureka의 registry에 등록할지 여부이고 (11)
-  - fetch-registry는 registry에 있는 정보를 가져올지 여부이다.(12~13)  
+  - register-with-eureka는 eureka의 registry에 등록할지 여부이고 (10)
+  - fetch-registry는 registry에 있는 정보를 가져올지 여부이다.(11)
+  - 디스커버리 설정 (12-13)
 ------
 
 ![image](https://user-images.githubusercontent.com/35948339/120201351-4e39ec80-c260-11eb-9737-9588f9e0edf7.png)
