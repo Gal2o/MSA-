@@ -27,10 +27,30 @@
   - 클라이언트들 등록
 -------
 - ![image](https://user-images.githubusercontent.com/35948339/120265995-022c8d80-c2dc-11eb-8a34-6246ede4b9e2.png)
-  - ZuulFilter 상속 & @Slf4j 어노테이션 사용해서 필터를 사용할 수 있다.
+  - ZuulFilter 상속하여 필터를 오버라이드 할 수 있고,
+  - @Slf4j + log 메소드를 사용해서 로그 기능을 사용할 수 있다.
 
-## Spring Cloud Gateway (비동기 처리가 가능하다) - application.yml
-  - ![image](https://user-images.githubusercontent.com/35948339/120267053-238e7900-c2de-11eb-80b0-7dcd253c73c8.png)
-    - predicate : => client가 first-service, second-service 요청이 있다면 해당 uri로 접근하겠다.
+## Spring Cloud Gateway (비동기 처리가 가능하다) 
+  - application.yml
+    - ![image](https://user-images.githubusercontent.com/35948339/120267053-238e7900-c2de-11eb-80b0-7dcd253c73c8.png)
+      - predicate : => client가 first-service, second-service 요청이 있다면 해당 uri로 접근하겠다.
+-------
   - ![image](https://user-images.githubusercontent.com/35948339/120281424-e2a15f00-c2f3-11eb-993b-c38bb4dda7ef.png)
     - Tomcat이 아닌 Netty서버가 작동한다 (비동기 가능)
+-------
+  - application.yml 파일이 아닌 class로 filter 적용하기
+    - ![image](https://user-images.githubusercontent.com/35948339/120311947-1770de80-c313-11eb-82e1-0710aa939d3a.png)
+      - @Configuration, @Bean 등록 후,
+      - 메소드 체이닝, Lamda 함수로 route, filter를 적용할 수 있다.
+      
+    - ![image](https://user-images.githubusercontent.com/35948339/120314021-bdbde380-c315-11eb-993b-08d5e8d09783.png)
+      - yml에서도 동일하게 설정해 줄 수 있다.
+-------
+
+## Spring Cloud Gateway - Custom filter
+  - ![image](https://user-images.githubusercontent.com/35948339/120331007-50677e00-c328-11eb-96a9-82678eac0c99.png)
+    - filter 클래스를 만들어서 Webflux 객체인 ServeHttpRequest, Response를 통해 log를 남긴다.
+  - ![image](https://user-images.githubusercontent.com/35948339/120331497-cb309900-c328-11eb-85bd-3b24ea31170d.png)
+    - yml 파일에서 CustomFilter를 적용 시키면 작동완료!
+
+
