@@ -73,10 +73,28 @@
   - ![image](https://user-images.githubusercontent.com/35948339/120353044-52d3d300-c33c-11eb-8448-cacf5584bf68.png)
     - 서버 등록 설정을 모두 true로 해주고, Eureka 서버의 위치를 등록 시켜 주면 된다.
 -------
+
+## Spring Cloud Gateway - Load Balancer
+  - ![image](https://user-images.githubusercontent.com/35948339/120357463-713bcd80-c340-11eb-807d-12afe2663bd1.png)
+    - service 하나를 random port로 설정 후,
+-------
   - ![image](https://user-images.githubusercontent.com/35948339/120353197-77c84600-c33c-11eb-8692-9f87dd061050.png)
     - Eureka 페이지에 instance 들을 보면 Gateway 제외하고 서비스들 이름을 볼 수 있는데
       - ![image](https://user-images.githubusercontent.com/35948339/120353392-9a5a5f00-c33c-11eb-96e3-00f3f07ace46.png)
-      - lb://instance_name 으로 변경해 줘도 routing이 잘 된다.
+      - lb://instance_name 으로 변경을 한다.
+-------
+  - ![image](https://user-images.githubusercontent.com/35948339/120357650-a5af8980-c340-11eb-8df2-9847f89518f5.png)
+    - 이전과는 다르게 port 설정 없이 multi service 를 실행 시키게 되면,
+-------
+  - ![image](https://user-images.githubusercontent.com/35948339/120357837-d394ce00-c340-11eb-8748-4618c68e3e7c.png)
+    - 랜덤으로 service name이 등록 되고,
+-------
+  - ![image](https://user-images.githubusercontent.com/35948339/120357924-ea3b2500-c340-11eb-9975-89dcd9008faa.png)
+    - port 를 출력하게 되면, 
+      - ![image](https://user-images.githubusercontent.com/35948339/120358016-063ec680-c341-11eb-867a-b8e288a3d0d3.png)
+      - ![image](https://user-images.githubusercontent.com/35948339/120358053-0f2f9800-c341-11eb-8fa4-5a57c1792354.png)
+      - Round Robin 방식으로 번갈아서 port 번호를 출력해 준다.
+
 
 
 
