@@ -69,4 +69,14 @@
   - ![image](https://user-images.githubusercontent.com/35948339/120348512-3766c900-c338-11eb-8f25-d1ec1b10e231.png)
     - 한 서비스에 Custom Filter를 한 개 이상 쓰려면 -name 으로 구분해 줘야 한다.
 
+## Eureka Server 등록하기
+  - ![image](https://user-images.githubusercontent.com/35948339/120353044-52d3d300-c33c-11eb-8448-cacf5584bf68.png)
+    - 서버 등록 설정을 모두 true로 해주고, Eureka 서버의 위치를 등록 시켜 주면 된다.
+-------
+  - ![image](https://user-images.githubusercontent.com/35948339/120353197-77c84600-c33c-11eb-8692-9f87dd061050.png)
+    - Eureka 페이지에 instance 들을 보면 Gateway 제외하고 서비스들 이름을 볼 수 있는데
+      - ![image](https://user-images.githubusercontent.com/35948339/120353392-9a5a5f00-c33c-11eb-96e3-00f3f07ace46.png)
+      - lb://instance_name 으로 변경해 줘도 routing이 잘 된다.
+
+
 
