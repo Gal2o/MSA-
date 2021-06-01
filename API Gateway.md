@@ -53,4 +53,20 @@
   - ![image](https://user-images.githubusercontent.com/35948339/120331497-cb309900-c328-11eb-85bd-3b24ea31170d.png)
     - yml 파일에서 CustomFilter를 적용 시키면 작동완료!
 
+## Spring Cloud Gateway - Global filter (공통 필터)
+  - ![image](https://user-images.githubusercontent.com/35948339/120343828-fff61d80-c333-11eb-9e02-3070a0450781.png)
+    - Custom Filter와 비슷하게 만들면 된다.
+    - @Data로 Global Filter의 args를 따로 만들어 줄 수 있다.
+    - boolean 으로 선언된 args는 isPreLogger()와 같이 lombok에서 자동으로 만들어 준다.
+-------
+  - ![image](https://user-images.githubusercontent.com/35948339/120343739-ed7be400-c333-11eb-8dc1-d2206d3f1ced.png)
+    - default-filters를 선언하여 설정을 해주면 된다.
+
+## Spring Cloud Gateway - Logging filter
+  - ![image](https://user-images.githubusercontent.com/35948339/120348694-5d8c6900-c338-11eb-89d1-5610c29f6823.png)
+    - 비슷한 방법으로 Logging filter를 만들 수 있다.
+-------
+  - ![image](https://user-images.githubusercontent.com/35948339/120348512-3766c900-c338-11eb-8f25-d1ec1b10e231.png)
+    - 한 서비스에 Custom Filter를 한 개 이상 쓰려면 -name 으로 구분해 줘야 한다.
+
 
