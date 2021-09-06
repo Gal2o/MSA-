@@ -1,6 +1,5 @@
 # 로그인 기능 추가
 
-
 ## AuthenticationFilter.java
   - Spring Security를 이용한 로그인 요청 발생 시, 작업을 처리해 주는 Custom Filter 클래스
   - ![image](https://user-images.githubusercontent.com/35948339/122778597-19add380-d2e8-11eb-9b1c-4c73048b90f2.png)
@@ -36,8 +35,21 @@
 
 ## API-Gateway Routes 변경
   - ![image](https://user-images.githubusercontent.com/35948339/122783888-ede11c80-d2ec-11eb-92aa-76ce6deaab0e.png)
-  - `/user-service/(?<segment>.*)` 이러한 형태의 uri 가 들어오면 `/$\{segment} 이러한 경로로 바꿔주겠다는 의미`
-  - 각 REST API의 routes 설정
+  - #### `/user-service/(?<segment>.*)` 이러한 형태의 uri 가 들어오면 `/$\{segment} 이러한 경로로 바꿔주겠다는 의미`
+  --------
+  - ### 각 REST API의 routes 설정
     - ![image](https://user-images.githubusercontent.com/35948339/122784308-53cda400-d2ed-11eb-9dfe-2b552f11b354.png)
-    - routes를 설정하고 나면 `userController` -> @RequestMapping에 `user-service` 없이 uri 호출 가능하다.
+    - ### routes를 설정하고 나면 `userController` -> @RequestMapping에 `user-service` 없이 uri 호출 가능하다.
+    - ![image](https://user-images.githubusercontent.com/35948339/132234713-d573c5db-99f8-4c0a-89d6-a0f79af0ac95.png)
+    - ### /user-service/ 필요없이 127.0.0.1:`user-service port`/`routes 설정한 API 주소` 처럼 바로 호출이 가능하다
+-------
+## User-service 로그인 처리 과정
+  - ### 1️⃣ User-service가 실행 되면, WebSecurity 클래스 - @Configuration의 클래스 들이 메모리에 올라간다.
+  - ### 2️⃣ AuthenticationFilter 클래스가 로그인 시도 시, 가장 먼저 호출된다
+  - ### 3️⃣ 로그인 시도 때, 입력 받은 email, password (InputStream) -> RequestLogin 객체로 매핑
+  - ### 4️⃣ loadUserByUsername에서 email, password 을 확인해서 가져오면
+  - ### 5️⃣ successfulAuthentication에서 `Jwt builder`로 JWT토큰 생성 후 클라이언트에게 반납
+-------
+
+- ![image](https://user-images.githubusercontent.com/35948339/132244620-dcf4f0e0-c434-4af2-a7f6-db7940ae5eaf.png)
 
