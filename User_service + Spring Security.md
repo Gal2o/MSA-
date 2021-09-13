@@ -51,9 +51,14 @@
   - ### 4️⃣ successfulAuthentication에서 `Jwt builder`로 JWT토큰 생성 후 클라이언트에게 반납
 -------
 ## User-service 로그인 성공 처리 (AuthenticationFilter class)
+  - ### ⭐ Dependency 추가 <br><br> ![image](https://user-images.githubusercontent.com/35948339/133121340-36267b87-540b-4254-ad4e-472d49a53715.png)
   - ### 1️⃣ 인증된 객체 반환 <br><br> <img src="https://user-images.githubusercontent.com/35948339/133106657-3332e128-ba6e-4ca2-b694-1e2d67add519.png" width=600>
-  - ### 2️⃣ 인증된 객체를 받아서 JWT token 생성하여 <br><br> responseHeader에 token값과 user_id를 넣어서 클라이언트에 반환 <br><br> <img src="https://user-images.githubusercontent.com/35948339/133108026-a360b3d3-9cc0-4bc3-b16c-d3d83a3761f7.png" width=700>
+  - ### 2️⃣ 인증된 객체를 받아서 JWT token 생성하여 <br><br> responseHeader에 token값과 user_id를 넣어서 클라이언트에 반환 <br><br> <img src="https://user-images.githubusercontent.com/35948339/133122046-148fb8d0-4bae-4917-b5f1-d4a61b3fb84b.png" width=800>
   - ### 💾 클라이언트에서 받는 값 <br><br> <img src="https://user-images.githubusercontent.com/35948339/133102446-a5dead85-6650-4c5f-a82c-ba2a6b3c18df.png" width=600>
 -------
 ## API Gateway 에서 Spring Security와 JWT Token 사용하도록 기능 추가
+  - ### ⭐ yml 파일에서 GET은 인증이 필요하므로 AuthorizationHeaderFilter를 거치도록 설정 <br><br> ![image](https://user-images.githubusercontent.com/35948339/133123082-92136761-cabc-4ccc-8bd5-d993668aa92b.png)
+  - ### ![image](https://user-images.githubusercontent.com/35948339/133123964-f8352956-fac8-47b3-a0c0-ecb39dd67a39.png)
+  - ### ![image](https://user-images.githubusercontent.com/35948339/133123580-eb4ebac1-c2d4-45a1-8e13-2ca3e0d1ce8b.png)
+  - ### ![image](https://user-images.githubusercontent.com/35948339/133124290-04e5989f-8fa5-483b-8474-1fafce499d56.png)
 
