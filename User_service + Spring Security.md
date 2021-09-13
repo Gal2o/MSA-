@@ -43,13 +43,17 @@
     - ![image](https://user-images.githubusercontent.com/35948339/132234713-d573c5db-99f8-4c0a-89d6-a0f79af0ac95.png)
     - ### /user-service/ 필요없이 127.0.0.1:`user-service port`/`routes 설정한 API 주소` 처럼 바로 호출이 가능하다
 -------
-## User-service 로그인 처리 과정
-  - ### 1️⃣ User-service가 실행 되면, WebSecurity 클래스 - @Configuration의 클래스 들이 메모리에 올라간다.
-  - ### 2️⃣ AuthenticationFilter 클래스가 로그인 시도 시, 가장 먼저 호출된다
-  - ### 3️⃣ 로그인 시도 때, 입력 받은 email, password (InputStream) -> RequestLogin 객체로 매핑
-  - ### 4️⃣ loadUserByUsername에서 email, password 을 확인해서 가져오면
-  - ### 5️⃣ successfulAuthentication에서 `Jwt builder`로 JWT토큰 생성 후 클라이언트에게 반납
--------
+## User-service 로그인 처리 과정 (WebSecurity - AuthenticationFilter class)
+  - ### 1️⃣ AuthenticationFilter 클래스가 로그인 시도 시, 가장 먼저 호출된다 <br><br> (user-service에 login API가 없어도 spring security가 알아서 실행)
+  - ### 2️⃣ 로그인 시도 때, 입력 받은 email, password (InputStream) -> RequestLogin 객체로 매핑 <br><br> <img src="https://user-images.githubusercontent.com/35948339/133109339-002091bb-1cb2-4914-8f05-e493b4aeac7a.png" width=600>
 
-- ![image](https://user-images.githubusercontent.com/35948339/132244620-dcf4f0e0-c434-4af2-a7f6-db7940ae5eaf.png)
+  - ### 3️⃣ loadUserByUsername에서 email, password 을 확인해서 가져오면
+  - ### 4️⃣ successfulAuthentication에서 `Jwt builder`로 JWT토큰 생성 후 클라이언트에게 반납
+-------
+## User-service 로그인 성공 처리 (AuthenticationFilter class)
+  - ### 1️⃣ 인증된 객체 반환 <br><br> <img src="https://user-images.githubusercontent.com/35948339/133106657-3332e128-ba6e-4ca2-b694-1e2d67add519.png" width=600>
+  - ### 2️⃣ 인증된 객체를 받아서 JWT token 생성하여 <br><br> responseHeader에 token값과 user_id를 넣어서 클라이언트에 반환 <br><br> <img src="https://user-images.githubusercontent.com/35948339/133108026-a360b3d3-9cc0-4bc3-b16c-d3d83a3761f7.png" width=700>
+  - ### 💾 클라이언트에서 받는 값 <br><br> <img src="https://user-images.githubusercontent.com/35948339/133102446-a5dead85-6650-4c5f-a82c-ba2a6b3c18df.png" width=600>
+-------
+## API Gateway 에서 Spring Security와 JWT Token 사용하도록 기능 추가
 
