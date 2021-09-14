@@ -58,7 +58,11 @@
 -------
 ## API Gateway 에서 Spring Security와 JWT Token 사용하도록 기능 추가
   - ### ⭐ yml 파일에서 GET은 인증이 필요하므로 AuthorizationHeaderFilter를 거치도록 설정 <br><br> ![image](https://user-images.githubusercontent.com/35948339/133123082-92136761-cabc-4ccc-8bd5-d993668aa92b.png)
+  - ### ⭐ xml.bind dependency 추가 안하면 jwt 파싱에서 에러 발생 ‼ <br><br> ![image](https://user-images.githubusercontent.com/35948339/133284077-6dd2e362-857c-4fe4-991d-5192a5933b85.png)
   - ### ![image](https://user-images.githubusercontent.com/35948339/133123964-f8352956-fac8-47b3-a0c0-ecb39dd67a39.png)
   - ### ![image](https://user-images.githubusercontent.com/35948339/133123580-eb4ebac1-c2d4-45a1-8e13-2ca3e0d1ce8b.png)
   - ### ![image](https://user-images.githubusercontent.com/35948339/133124290-04e5989f-8fa5-483b-8474-1fafce499d56.png)
+  - ### 필터 적용 후, GET method는 401 에러 발생 <br><br> ![image](https://user-images.githubusercontent.com/35948339/133278092-4f51a774-6128-4cfc-a5ae-2e476e280cdd.png)
+  - ### 💾 정상적인 토큰을 가지고 GET 하면 200 성공 ‼ <br><br> ![image](https://user-images.githubusercontent.com/35948339/133284483-d8882594-6691-4cfe-a12d-0205778d64c9.png)
+
 
