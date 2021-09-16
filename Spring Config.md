@@ -27,8 +27,7 @@
   - ### 3️⃣ WebSecurity에서 actuator request를 허용해준다 <br><br> ![image](https://user-images.githubusercontent.com/35948339/133644922-2c89db9a-319a-4ada-a229-b464ce13d710.png)
   - ### (GET) health : actuator 서비스 상태 확인 <br><br> ![image](https://user-images.githubusercontent.com/35948339/133645195-56674ff3-d9a1-4fae-9e1f-490562790806.png)
   - ### (GET) bean : user-service에 등록되어 있는 bean 확인 <br><br> ![image](https://user-images.githubusercontent.com/35948339/133645450-8f160896-5eca-40b5-a2b2-f91fdda0126a.png)
-  - ### (POST) refresh : ecommerce 변경 후, 재기동 없이 refresh로 바로 적용 가능 <br><br> ![image](https://user-images.githubusercontent.com/35948339/133645741-9799bad4-6569-441a-87a9-b9b31b278c53.png) 👌 token.secret을 변경하고 refresh하면 정상적으로 변경되어 있다 <br><br> 어떠한 value를 바꿨는지 response에서 보여준다 <br><br> ![image](https://user-images.githubusercontent.com/35948339/133646155-8ae50b28-30ec-4609-9564-5b8f9ea7df83.png)
-  - ### ‼‼ ecommerce.yml 의 token.secret을 변경하면 위와 같이 git add + commit 해줘야한다.‼‼
+  - ### (POST) refresh : ecommerce 변경 후, 재기동 없이 refresh로 바로 적용 가능 <br><br> ![image](https://user-images.githubusercontent.com/35948339/133645741-9799bad4-6569-441a-87a9-b9b31b278c53.png) <br><br> 1️⃣ ecommerce.yml 안에 token.secret을 변경하고 git add + commit <br><br> 2️⃣ refresh하면 정상적으로 변경되어 있다 <br><br> ![image](https://user-images.githubusercontent.com/35948339/133646155-8ae50b28-30ec-4609-9564-5b8f9ea7df83.png) <br><br> ✅ 어떠한 value를 바꿨는지 response에서 보여준다.
 
 
 
