@@ -66,6 +66,10 @@
     - #### 3️⃣ management에 busrefresh를 추가한다. <br><br> ![image](https://user-images.githubusercontent.com/35948339/142767881-47a1fc29-12f4-45f0-930b-2a944542609a.png)
 -------
   - #### 정상적으로 rabbitMQ를 설정한 서비스가 접속한 것을 확인 할 수 있다. <br><br> ![image](https://user-images.githubusercontent.com/35948339/142768267-156d5d28-b9e6-4dc1-963e-0679b08577cf.png)
+-------
+  - ### bootstrap.yml 파일 수정하기
+    - #### `userservice`, `spring-cloud-gateway`에서 `bootstrap.yml`을 수정하기 <br><br> ![image](https://user-images.githubusercontent.com/35948339/142769431-80b099ca-0613-4be5-b35a-b511ff33762e.png)
+
 
 
   
