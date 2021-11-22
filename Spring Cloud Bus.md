@@ -69,6 +69,15 @@
 -------
   - ### bootstrap.yml 파일 수정하기
     - #### `userservice`, `spring-cloud-gateway`에서 `bootstrap.yml`을 수정하기 <br><br> ![image](https://user-images.githubusercontent.com/35948339/142769431-80b099ca-0613-4be5-b35a-b511ff33762e.png)
+      - #### `인증에 필요한 JWT 토큰정보`를 `config-service`를 거쳐서 읽어온다.
+    -------
+    - #### 테스트에 용이하도록 `config-service`는 `native(local)에 있는 application.yml파일`을 읽어온다. <br><br> ![image](https://user-images.githubusercontent.com/35948339/142880834-20f40e45-c363-4c8d-ba2e-d3cbefdae495.png)
+    ------
+    - #### `user-service`에서 계정 생성 후, jwt 토큰을 가지고 `health_check`메소드를 호출하면 정상적으로 값을 잘 가져온다. <br><br> ![image](https://user-images.githubusercontent.com/35948339/142881535-ad3f6007-93be-4960-abb2-fa44b3dfd7a6.png)
+    ``` java
+      It's Working in User Service on PORT, port(local.server.port)=11632, port(server.port)=0, token             
+      secret=user_token_native_application, token expiration time=864000000
+    ```
 
 
 
