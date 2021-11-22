@@ -96,7 +96,8 @@
       It's Working in User Service on PORT, port(local.server.port)=11632, port(server.port)=0, token 
       secret=user_token_native_application_changed_#1, token expiration time=864000000
     ```
-
+    - #### 4️⃣ rabbitMQ를 통해 갱신 정보를 브로드캐스팅 하기 때문에 한 번의 refresh로 spring-cloud-gateway 서비스에서도 갱신이 된 것을 알 수 있다. <br><br> ![image](https://user-images.githubusercontent.com/35948339/142893415-c3387840-8ec6-4ad8-8817-18d74c9d278c.png)
+  --------
     
 
 
