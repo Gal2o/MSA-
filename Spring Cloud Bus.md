@@ -78,6 +78,27 @@
       It's Working in User Service on PORT, port(local.server.port)=11632, port(server.port)=0, token             
       secret=user_token_native_application, token expiration time=864000000
     ```
+------
+  - ### Spring Cloud Bus를 통해 토큰 값 Refresh 해보기
+    - #### 1️⃣ config-service의 application.yml 파일을 수정한다.
+    ```
+      token:
+        expiration_time: 864000000
+        secret: user_token_native_application_changed_#1
+
+      gateway:
+        ip: 192.168.0.8
+    ```
+    - #### 2️⃣ user-service에 추가한 actuator/`busrefresh`를 통해 변경한 값을 갱신한다. <br><br> ![image](https://user-images.githubusercontent.com/35948339/142891505-9a5f15d8-d0c1-46be-a785-de21025056bc.png) <br><br> ![image](https://user-images.githubusercontent.com/35948339/142891142-a79a2b12-e30d-4b43-a8b6-896dc9fc1ebb.png)
+      - #### `user-service`에는 refresh가 되었다는 로그가 생기고 204 메시지를 통해 갱신이 된 것을 알 수 있다.
+    - #### 3️⃣ `user-service/health_check`를 통해 application.yml 정보를 확인하면 갱신 된 것을 확인할 수 있다.
+    ``` 
+      It's Working in User Service on PORT, port(local.server.port)=11632, port(server.port)=0, token 
+      secret=user_token_native_application_changed_#1, token expiration time=864000000
+    ```
+
+    
+
 
 
 
